@@ -1,0 +1,123 @@
+Metadata-Version: 2.0
+Name: grab-screen
+Version: 0.0.13
+Summary: Take screenshots and upload anywhere
+Home-page: https://github.com/andrei-shabanski/grab-screen
+Author: Andrei Shabanski
+Author-email: andrei.shabanski@gmail.com
+License: MIT
+Keywords: screenshot image capture grab cloudapp
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Multimedia :: Graphics :: Capture
+Classifier: Topic :: Multimedia :: Graphics :: Capture :: Screen Capture
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: click (==6.7)
+Requires-Dist: mss (==3.0.1)
+Requires-Dist: pyperclip (==1.5.27)
+Requires-Dist: requests (==2.18.4)
+Provides-Extra: dev
+Requires-Dist: bandit (==1.4.0); extra == 'dev'
+Requires-Dist: flake8 (==3.4.1); extra == 'dev'
+Requires-Dist: flake8-colors (==0.1.6); extra == 'dev'
+Requires-Dist: flake8-deprecated (==1.2.1); extra == 'dev'
+Requires-Dist: flake8-import-order (==0.13); extra == 'dev'
+Requires-Dist: flake8-mutable (==1.2.0); extra == 'dev'
+Requires-Dist: flake8-print (==2.0.2); extra == 'dev'
+Requires-Dist: pep8-naming (==0.4.1); extra == 'dev'
+Requires-Dist: pytest (<4); extra == 'dev'
+Requires-Dist: pytest-mock (==1.6.2); extra == 'dev'
+Requires-Dist: tox (<3); extra == 'dev'
+
+Grab Screen
+===========
+
+.. image:: https://api.codacy.com/project/badge/Grade/0f2d7aaac9684b728fd45fbab2fbca3b
+    :target: https://www.codacy.com/app/andrei-shabanski/grab-screen?utm_source=github.com&utm_medium=referral&utm_content=andrei-shabanski/grab-screen&utm_campaign=badger
+.. image:: https://travis-ci.org/andrei-shabanski/grab-screen.svg?branch=master
+    :target: https://travis-ci.org/andrei-shabanski/grab-screen
+.. image:: https://img.shields.io/pypi/pyversions/grab-screen.svg
+    :target: https://pypi.python.org/pypi/grab-screen
+.. image:: https://img.shields.io/pypi/l/grab-screen.svg
+    :target: https://github.com/andrei-shabanski/grab-screen/blob/master/LICENSE
+
+Take screenshots and upload anywhere!
+
+Installing
+----------
+
+You install ``grab-screen`` with pip:
+
+.. code:: shell
+
+    $ pip install grab-screen
+
+Usage
+-----
+
+.. code:: shell
+
+    $ grab-screen --help
+    Usage: grab-screen [OPTIONS] COMMAND [ARGS]...
+
+    Options:
+      -h, --help     Show this message and exit.
+      -v, --version  Show the version and exit.
+
+    Commands:
+      config  Get and set options.
+      image   Make a screenshot and upload to a storage.
+
+Configurations
+^^^^^^^^^^^^^^
+
+``$ grab-screen config list`` - show configs.
+
+``$ grab-screen config set NAME [VALUE]`` - set an option. You can add
+``--upset`` to remove the option.
+
+``$ grab-screen config reset`` - remove all options.
+
+Taking screenshots
+^^^^^^^^^^^^^^^^^^
+
+``$ grab-screen image`` - take a screenshot.
+
+Use ``-h``/``--help`` to see more options.
+
+Storages
+--------
+
+**CloudApp**
+
+    Before uploading screenshots to CloudApp, provider your credentials:
+
+    .. code:: shell
+
+        $ grab-screen config set cloudapp_username YOUR-USERNAME
+        $ grab-screen config set cloudapp_password
+
+    Then take a screenshot:
+
+    .. code:: shell
+
+        $ grab-screen image --browse --storage cloudapp
+
+Licensing
+---------
+
+MIT License
+
+

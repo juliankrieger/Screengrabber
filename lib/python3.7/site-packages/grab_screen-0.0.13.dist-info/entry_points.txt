@@ -1,0 +1,3 @@
+[console_scripts]
+grab-screen = grab_screen:main
+
