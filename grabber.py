@@ -21,12 +21,12 @@ if __name__ == '__main__':
 
     pages = int(sys.argv[1])
 
-    imgname = "currentscreen.png"
+    imgname = "currentscreen"
 
     for i in range(0, pages):
         im = pyscreenshot.grab()
         try:
-            im.save(imgname+"page{}".format(i))
+            im.save(imgname+"page{}.png".format(i))
         except Exception as e:
             print("Error at saving file. Try running as administrator.")
 
